@@ -1,5 +1,4 @@
 import pygame
-import random
 
 # Initsialiseerib Pygamei ja loob ekraani
 pygame.init()
@@ -18,9 +17,9 @@ pad_img = pygame.transform.scale(pygame.image.load("pad.png"), (120, 20))
 
 # Palli seaded
 ball_rect = ball_img.get_rect()
-ball_rect.x = random.randint(20, laius - 20)
+ball_rect.x = laius // 2
 ball_rect.y = kõrgus // 2
-ball_speed = [4 * random.choice([-1, 1]), 4]
+ball_speed = [4, 4]
 
 # Aluse seaded
 pad_rect = pad_img.get_rect()
@@ -70,6 +69,7 @@ while run:
     ekraan.blit(pad_img, pad_rect)
     ekraan.blit(font.render(f"Punktid: {score}", True, tekst), (10, 10))
 
+    # Uuendab ekraani
     pygame.display.update()
 
 pygame.quit()
